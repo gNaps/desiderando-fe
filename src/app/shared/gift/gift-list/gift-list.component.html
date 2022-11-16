@@ -1,0 +1,8 @@
+<p>list works!</p>
+<p-dataView [value]="gifts">
+  <ng-template let-gift pTemplate="listItem">
+    <div>
+      {{ gift.id }}
+    </div>
+  </ng-template>
+</p-dataView>

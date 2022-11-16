@@ -1,0 +1,8 @@
+<p class="text-xl">sign-in works!</p>
+<div class="max-w-30rem">
+  <form [formGroup]="signInForm" class="flex flex-column">
+    <input type="text" pInputText formControlName="username" />
+    <input type="password" pInputText formControlName="password" />
+    <p-button label="Sign in" (onClick)="onSignIn()"></p-button>
+  </form>
+</div>
