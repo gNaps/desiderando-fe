@@ -1,1 +1,86 @@
-<p>gift-edit works!</p>
+<p-card>
+  <h2 class="m-0" *ngIf="!isEdit">Crea un nuovo desiderio</h2>
+  <h2 class="m-0" *ngIf="isEdit">Modifica il desiderio</h2>
+  <form [formGroup]="giftForm" class="grid">
+    <div class="col-12 md:col-6 flex flex-column">
+      <h5>Nome</h5>
+      <input
+        type="text"
+        placeholder="Nome del desiderio"
+        pInputText
+        formControlName="name"
+      />
+    </div>
+    <div class="col-12">
+      <h5>Descrizione</h5>
+      <textarea
+        pInputTextarea
+        placeholder="Descrizione del desiderio"
+        formControlName="description"
+      ></textarea>
+      <small id="gift-description" class="block">
+        Indica quanti più dettagli possibili per aiutare chi ti regalerà questo
+        desiderio!
+      </small>
+    </div>
+    <div class="col-12 md:col-6 flex flex-column">
+      <h5>Prezzo</h5>
+      <p-inputNumber
+        formControlName="price"
+        mode="currency"
+        inputId="currency-gift"
+        currency="EUR"
+        locale="it-IT"
+        placeholder="Prezzo del desiderio"
+      ></p-inputNumber>
+    </div>
+    <div class="col-12 md:col-6 flex flex-column">
+      <h5>Dove trovarlo</h5>
+      <input
+        type="text"
+        placeholder="Dove trovare il desiderio"
+        pInputText
+        formControlName="location"
+      />
+      <small id="gift-description" class="block">
+        Indica il sito web o il negozio dove è possibile acquistare questo
+        desiderio.
+      </small>
+    </div>
+    <div class="col-12 md:col-6 flex flex-column">
+      <h5>Data di scadenza</h5>
+      <p-calendar
+        formControlName="expiredAt"
+        dateFormat="dd/mm/yy"
+      ></p-calendar>
+      <small id="gift-description" class="block">
+        Una volta superata la scadenza il desiderio non sarà più visibile nella
+        vostra bacheca finchè non verrà rinnovato.
+      </small>
+    </div>
+    <div class="col-12">
+      <h5>Foto</h5>
+      <app-image-uploader [control]="imageControl"></app-image-uploader>
+      <small id="gift-description" class="block">
+        Inserendo una foto aiuterai i tuoi amici nel regalarti questo desiderio!
+      </small>
+    </div>
+  </form>
+  <div class="flex justify-content-end gap-2 mt-3">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Salva"
+      (click)="onSave()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Annulla"
+      class="p-button-secondary"
+      (click)="onCancel()"
+    ></button>
+  </div>
+</p-card>

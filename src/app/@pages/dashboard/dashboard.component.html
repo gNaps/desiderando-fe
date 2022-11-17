@@ -1,2 +1,7 @@
 <p>dashboard works!</p>
-<app-gift-list></app-gift-list>
+<app-gift-list
+  [gifts]="gifts"
+  [context]="'DASHBOARD'"
+  (openFriendDetail)="onOpenFriendDetail($event)"
+  (openGiftDetail)="onOpenGiftDetail($event)"
+></app-gift-list>

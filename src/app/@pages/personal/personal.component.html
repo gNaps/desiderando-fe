@@ -1,1 +1,6 @@
 <p>personal works!</p>
+<app-gift-list
+  [gifts]="gifts"
+  [context]="'PERSONAL'"
+  (openGiftDetail)="onOpenGiftDetail($event)"
+></app-gift-list>

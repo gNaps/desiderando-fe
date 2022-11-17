@@ -1,1 +1,11 @@
-<p>footer works!</p>
+<footer class="footer">
+  <a [routerLink]="['/', 'dashboard']" [routerLinkActive]="'active'">
+    <div class="pi pi-home"></div>
+  </a>
+  <a [routerLink]="['/', 'personal']" [routerLinkActive]="'active'">
+    <div class="pi pi-user"></div>
+  </a>
+  <a [routerLink]="['/', 'friends']" [routerLinkActive]="'active'">
+    <div class="pi pi-heart"></div>
+  </a>
+</footer>

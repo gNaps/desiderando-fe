@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Lato", serif;
+}
+
+body .p-component {
+  font-family: "Lato", serif;
+}
+
+.p-inputtext,
+.p-inputnumber,
+.p-calendar {
+  width: 100%;
+}
+
+.p-card .p-card-body {
+  padding: 0 1rem !important;
+}

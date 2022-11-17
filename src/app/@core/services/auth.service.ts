@@ -17,12 +17,11 @@ export class AuthService {
     return this.currentUser;
   }
   setCurrentUser(data: any) {
-    console.log('authService / setCurrentUser', data);
     this.currentUser = { ...data };
     localStorage.setItem(KEY_STORAGE_USER, JSON.stringify(data));
   }
 
   getJwtToken() {
-    return this.currentUser.jwtToken;
+    return this.currentUser.jwt;
   }
 }
