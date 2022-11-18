@@ -1,0 +1,8 @@
+<p>friend-list works!</p>
+<p-dataView [value]="friends">
+  <ng-template let-friend pTemplate="listItem">
+    <div class="col-12" (click)="onOpenDetailFriend(friend.user._id)">
+      {{ friend.user.username }}
+    </div>
+  </ng-template>
+</p-dataView>

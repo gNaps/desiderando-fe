@@ -17,6 +17,8 @@ import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
+import { FriendListComponent } from './friend/friend-list/friend-list.component';
+import { FriendDetailComponent } from './friend/friend-detail/friend-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { MenuModule } from 'primeng/menu';
     GiftViewComponent,
     GiftEditComponent,
     ImageUploaderComponent,
+    FriendListComponent,
+    FriendDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +58,8 @@ import { MenuModule } from 'primeng/menu';
     CardModule,
     ToastModule,
     MenuModule,
+    FriendDetailComponent,
+    FriendListComponent,
   ],
   providers: [MessageService],
 })
