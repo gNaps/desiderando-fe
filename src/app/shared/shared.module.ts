@@ -16,6 +16,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MessageService } from 'primeng/api';
     CalendarModule,
     CardModule,
     ToastModule,
+    MenuModule,
   ],
   exports: [
     GiftListComponent,
@@ -51,6 +53,7 @@ import { MessageService } from 'primeng/api';
     CalendarModule,
     CardModule,
     ToastModule,
+    MenuModule,
   ],
   providers: [MessageService],
 })

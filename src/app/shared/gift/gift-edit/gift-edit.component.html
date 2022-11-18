@@ -38,13 +38,20 @@
       <h5>Dove trovarlo</h5>
       <input
         type="text"
-        placeholder="Dove trovare il desiderio"
+        placeholder="Negozio dove trovare il desiderio"
         pInputText
-        formControlName="location"
+        formControlName="shop"
+      />
+      <input
+        type="text"
+        placeholder="Sito web dove trovare il desiderio"
+        pInputText
+        formControlName="website"
+        class="mt-2"
       />
       <small id="gift-description" class="block">
-        Indica il sito web o il negozio dove è possibile acquistare questo
-        desiderio.
+        Indica almeno uno tra negozio o sito web dove è possibile acquistare
+        questo desiderio.
       </small>
     </div>
     <div class="col-12 md:col-6 flex flex-column">

@@ -1,1 +1,7 @@
-<p>friend-gift-detail works!</p>
+<app-gift-view
+  [gift]="gift"
+  [isOwner]="false"
+  [isGifter]="isGifter"
+  (book)="onBook()"
+  (unbook)="onUnbook()"
+></app-gift-view>

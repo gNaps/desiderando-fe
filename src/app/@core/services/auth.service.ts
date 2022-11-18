@@ -24,4 +24,8 @@ export class AuthService {
   getJwtToken() {
     return this.currentUser.jwt;
   }
+
+  signOut() {
+    localStorage.removeItem(KEY_STORAGE_USER);
+  }
 }

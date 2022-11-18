@@ -64,4 +64,30 @@ export class GiftApiService {
       headers,
     });
   }
+
+  book(giftId: any): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+    return this.httpClient.put(
+      `${environment.apiUrl}/gifts/${giftId}/book`,
+      {},
+      {
+        headers,
+      }
+    );
+  }
+
+  unbook(giftId: any): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+    return this.httpClient.put(
+      `${environment.apiUrl}/gifts/${giftId}/unbook`,
+      {},
+      {
+        headers,
+      }
+    );
+  }
 }

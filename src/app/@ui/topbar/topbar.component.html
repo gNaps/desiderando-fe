@@ -1,10 +1,15 @@
 <nav class="topbar">
   <p>Desiderando</p>
-  <button
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-plus"
-    (click)="onOpenNewGift()"
-  ></button>
+  <div class="flex align-items-center gap-3">
+    <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-plus"
+      (click)="onOpenNewGift()"
+    ></button>
+    <i role="button" class="pi pi-ellipsis-v" (click)="menu.toggle($event)"></i>
+  </div>
 </nav>
+
+<p-menu #menu [popup]="true" [model]="items"></p-menu>

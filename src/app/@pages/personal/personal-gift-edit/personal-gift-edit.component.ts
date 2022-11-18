@@ -56,9 +56,13 @@ export class PersonalGiftEditComponent implements OnInit {
         take(1),
         tap((data: any) => {
           this.notificationService.showSuccess();
-          this.router.navigate(['/personal']);
+          this.router.navigate(['/personal', this.giftId]);
         })
       )
       .subscribe();
+  }
+
+  onCancel() {
+    this.router.navigate(['/personal', this.giftId]);
   }
 }

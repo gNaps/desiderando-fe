@@ -1,1 +1,77 @@
-<p>gift-view works!</p>
+<p-card>
+  <ng-container *ngIf="gift">
+    <div class="w-full flex flex-column justify-content-center">
+      <h1 class="m-0">{{ gift.name }}</h1>
+      <h3 class="m-0">{{ gift.price }}</h3>
+    </div>
+    <div
+      class="gift-image"
+      [style.backgroundImage]="'url(' + getGiftImage(gift) + ')'"
+    ></div>
+    <p>{{ gift.description }}</p>
+    <div class="w-full flex align-items-center gap-2">
+      <i class="pi pi-shopping-bag"></i>
+      <ng-container *ngIf="gift.shop">
+        <p>{{ gift.shop }}</p>
+      </ng-container>
+      <ng-container *ngIf="!gift.shop">
+        <p>Nessun negozio indicato</p>
+      </ng-container>
+    </div>
+    <div class="w-full flex align-items-center gap-2">
+      <i class="pi pi-globe"></i>
+      <ng-container *ngIf="gift.website">
+        <a target="_blank" [href]="gift.website"
+          >Apri link per acquisto online</a
+        >
+      </ng-container>
+      <ng-container *ngIf="!gift.website">
+        <p>Nessun sito web indicato</p>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="!isOwner">
+      <ng-container *ngIf="!gift.giftBy">
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Prenota desiderio"
+          (click)="onBooking()"
+        ></button>
+      </ng-container>
+      <ng-container *ngIf="gift.giftBy">
+        <ng-container *ngIf="isGifter">
+          <button
+            pButton
+            pRipple
+            type="button"
+            label="Cancella prenotazione"
+            (click)="onUnbooking()"
+          ></button>
+        </ng-container>
+        <ng-container *ngIf="!isGifter">
+          Desiderio prenotato da {{ gift.giftBy.username }}
+        </ng-container>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="isOwner">
+      <div class="w-full flex justify-content-end gap-2">
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Modifica"
+          (click)="onModify()"
+        ></button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          label="Elimina"
+          class="p-button-secondary"
+          (click)="onDelete()"
+        ></button>
+      </div>
+    </ng-container>
+  </ng-container>
+</p-card>
